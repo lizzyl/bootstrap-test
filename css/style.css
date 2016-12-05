@@ -1,0 +1,338 @@
+.bs-docs-nav {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 0;
+    padding: 15px;
+}
+
+.bs-home-nav .bs-nav-b {
+    display: none;
+}
+
+.bs-docs-nav .navbar-brand,
+.bs-docs-nav .navbar-nav>li>a {
+    font-weight: 500;
+    color: #563d7c;
+}
+
+.bs-docs-nav .navbar-nav>li>a:hover,
+.bs-docs-nav .navbar-nav>.active>a,
+.bs-docs-nav .navbar-nav>.active>a:hover {
+    color: #463265;
+    background-color: #f9f9f9;
+}
+
+.bs-docs-nav .navbar-toggle .icon-bar {
+    background-color: #563d7c;
+}
+
+.bs-docs-nav .navbar-header .navbar-toggle {
+    border-color: #fff;
+}
+
+.bs-docs-nav .navbar-header .navbar-toggle:hover,
+.bs-docs-nav .navbar-header .navbar-toggle:focus {
+    background-color: #f9f9f9;
+    border-color: #f9f9f9;
+}
+
+
+body {
+    background-color: #f1f1f1;
+    line-height: 1.4285em;
+    color: #919191;
+    font-size: 14px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+body a {
+    color: #919191;    
+}
+
+.l_banner>img {
+    width: 100%;
+}
+
+.l_banner .carousel-inner>.item>a>img {
+    width: 100%;
+}
+
+.l_new_game div.l_line {
+    border-bottom: 1px solid #cacaca;
+    padding-left: 0px;
+}
+div.l_line h3 {
+    font-size: 1.28em;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+div.l_line h3:before {
+    display: inline-block;
+    width: 3px;
+    height: 0.8em;
+    margin-right: 6px;
+    content: '';
+    background: #e43f14;
+}
+.l_new_game div.l_line a {
+    float: right;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+
+.l_new_game .l_games .l_bd img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.l_new_game .l_games .l_item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.l_new_game .l_games .l_bd {
+    background-color: #fff;
+    box-shadow: 0 5px 0 0 #ebebeb;
+}
+.l_new_game .l_games .l_bd .l_content_index {
+    padding: 1.2em 1em;
+    font-size: 1em;
+}
+.l_new_game .l_games .l_bd .l_content_index a {
+    font-size: 1.28em;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: bold;   
+}
+.l_new_game .l_games .l_bd .l_content_index a:hover {
+    color: #1e70bf; 
+}
+.l_new_game .l_games .l_bd .l_content_index p {
+    position: relative;
+    top: .5rem;
+    line-height: 1.6rem;
+    height: 4.8rem;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.5);
+}
+.l_new_game .l_games .l_bd .l_content_index p:after {
+    content: "";
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.6rem;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #fff 50%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);
+}
+
+
+.bs-docs-nav .navbar-brand,
+.bs-docs-nav .navbar-nav>li>a {
+    font-weight: 500;
+    color: #919191;
+}
+.navbar-brand {
+    padding: 0;
+}
+
+
+.l_friend_link {
+    background-color: #fff;
+    margin-top: 20px;
+}
+.l_carousel .item a {
+    margin: 5px;
+    display: block;
+}
+.l_carousel .item a img {
+    display: block;
+    width: 100%;
+}
+
+.l_footer {
+    background-color: #1B1C1D;
+    padding: 20px 0px;
+}
+.l_footer p {
+    text-align: center;
+    line-height: 1.4285em;
+    margin: 0em 0em 1em;
+}
+.l_footer p, .l_footer a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.l_black {
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.l_about.l_content .l_jieshao h2,
+.l_about.l_content .l_wenhua h2,
+.l_custody.l_content h1,
+.l_privacy.l_content h1,
+.l_server.l_content h1, 
+.l_agreement.l_content h1 {
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.l_about.l_content p,
+.l_custody.l_content p,
+.l_privacy.l_content p,
+.l_server.l_content p ,
+.l_agreement.l_content p{
+    text-indent: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7)
+}
+.l_custody.l_content p a {
+    text-indent: 0px;
+}
+
+.l_content h2 {
+    font-size: 20px;
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+.l_index_banner .carousel-inner>.item>img, 
+.l_index_banner .carousel-inner>.item>a>img {
+    width: 100%;
+}
+
+.l_detail {
+    overflow: hidden;
+}
+.l_detail .l_side {
+    width: 30%;
+    float: left;
+}
+.l_detail .l_main_content {
+    width: 65%;
+    float: right;
+}
+
+.l_detail .l_side,
+.l_detail .l_main_content {
+    background-color: #fff;
+    margin-top: 30px;
+    padding: 20px 30px;
+    overflow: hidden;
+}
+.l_detail .l_side img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 20px;
+}
+.l_detail .l_side h3 {
+    float: left;
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 1.28em;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+}
+.l_detail .l_main_content {
+    font-size: 16px;
+    line-height: 28px;
+}
+.l_detail .l_btns {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.l_dispute {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 40px;
+}
+
+.l_content {
+    min-height: 370px;
+}
+
+.l_signin, .l_signup, .l_pay {
+    margin: 40px auto;
+}
+.l_signin, .l_signup {
+    background: url(../img/login-bg.png) no-repeat left center;
+    min-height: 598px;
+}
+.l_signin .panel, .l_signup .panel {
+    margin-top: 100px;
+    width: 45%;
+    float: right;
+}
+.l_signup .l_checkId {
+    
+}
+
+.l_alert {
+    color: red;
+    font-size: 12px;
+}
+
+.l_state li>span {
+    display: none;
+    padding: 15px;
+}
+.l_state li>span.l_exit {
+    cursor: pointer;    
+}
+
+.l_pay div.l_p {
+    margin: 100px auto;
+}
+.l_pay p {
+    text-align: center;
+    line-height: 35px;
+}
+
+.l_chongzhi {
+    margin-top: 100px;
+}
+.l_chongzhi div.panel-body>div.row{
+    margin: 20px 0px;
+}
+
+body.l_wait {
+    background-color: #fff;
+}
+div.l_wait {
+    text-align: center;
+}
+div.l_wait p{
+    margin: 50px auto;
+}
+div.l_wait img{
+    margin: 0px auto;
+}
+
+@media (max-width: 768px) {
+   .l_detail .l_side {
+        width: 100%;
+        float: left;
+    }
+    .l_detail .l_main_content {
+        width: 100%;
+        float: right;
+    } 
+    .l_signin .panel, .l_signup .panel {
+        margin-top: 150px;
+        width: 100%;
+    }
+    .l_signin, .l_signup {
+        background-position:  center center;
+    }
+}
+

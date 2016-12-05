@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="lizzy">
+    <title>官网首页</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/carousel.min.css">
+    <link rel="stylesheet" href="css/theme.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                  <img id="l_logo" src="" alt="">
+                </a>
+            </div>
+            <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="about.html">关于公司</a>
+                    </li>
+                    <li>
+                        <a href="custody.html">家长监护工程</a>
+                    </li>
+                    <li>
+                        <a href="pay.html">在线交易</a>
+                    </li>
+                </ul>
+                <ul class="l_state nav navbar-nav navbar-right">
+                    <li>
+                        <a href="signin.html">登录</a>
+                        <span>欢迎，<i></i></span>
+                    </li>
+                    <li>
+                        <a href="signup.html">注册</a>
+                        <span class="l_exit">退出</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner l_index_banner">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <!-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+<!--                 <div class="item active">
+                    <a href="http://www.baidu.com">
+                      <img src="http://cdn.hoolaiimg.com/group1/M00/00/29/CgIJKlfogeWAbJZmAALTKsqjajs799.jpg?v=0.0.1" alt="">
+                    </a>
+                    <div class="carousel-caption"></div></div>
+                <div class="item">
+                    <a href="http://www.baidu.com">
+                      <img src="http://cdn.hoolaiimg.com/group1/M00/00/2B/CgIJKlg2pryAFnMIAAQd23TGNmc871.jpg?v=0.0.1" alt="">
+                    </a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="http://www.baidu.com">
+                      <img src="http://cdn.hoolaiimg.com/group1/M00/00/28/PBzLUVc6fvSAeUi8AAMYBqU2do0253.jpg?v=0.0.1" alt="">
+                    <div class="carousel-caption">
+                    </a>
+                    </div>
+                </div> -->
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- new games -->
+    <div class="container l_new_game">
+      <div class="l_line col-md-12">
+          <h3>新作上线</h3>
+          <a href="#" class="l_right">全部游戏</a>
+      </div>
+      <div class="l_games row"></div>
+    </div>
+    <div class="l_friend_link">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="l_line">
+              <h3>友情链接</h3>            
+            </div>
+            <div class="l_carousel owl-carousel"></div>
+          </div>
+        </div>
+      </div>      
+    </div>
+    <div class="l_footer">
+      <div class="container">
+        <p class="l_tip"></p>
+        <p class="l_copyright"></p>
+        <p class="l_addr"></p>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->    
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/carousel.min.js"></script>
+    <script src="js/sha1.js"></script>
+
+</body>
+
+</html>
