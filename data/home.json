@@ -1,0 +1,68 @@
+{
+  "head": {
+    "meta": {
+      "keywords": "霍尔果斯炫动网络官网",
+      "description": "霍尔果斯炫动网络官网",
+      "author": "your-name@hoolai.com"
+    },
+    "title": "官网首页"
+  },
+  "header": {
+    "logo": {
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/2B/CgIJKlg-iz2ARC8SAAAjKGI-JWw474.png",
+      "url": "/"
+    },
+    "nav": [
+      { "name": "首页", "url": "/index.html" },
+      { "name": "关于我们", "url": "/about.html" },
+      { "name": "家长监护工程", "url": "/custody.html" },
+      { "name": "在线交易", "url": "/pay.html" }
+    ],
+    "account": {
+      "signup": {
+        "name": "注册",
+        "url": "/signup.html"
+      },
+      "signin": {
+        "name": "登陆",
+        "url": "/signin.html"
+      },
+      "logout": {
+        "name": "注销",
+        "url": "/logout.html"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "霍尔果斯炫动网络科技有限公司",
+    "address": "新疆伊犁州霍尔果斯市北京路以西、珠海路以南合作中心配套区查验业务楼8楼8-13-85号"
+  },
+  "content": {
+    "carousel": [
+      { "src": "http://cdn.hoolaiimg.com/group1/M00/00/29/CgIJKlfogeWAbJZmAALTKsqjajs799.jpg?v=0.0.1" },
+      { "src": "http://cdn.hoolaiimg.com/group1/M00/00/28/PBzLUVc6fvSAeUi8AAMYBqU2do0253.jpg?v=0.0.1" }
+    ],
+    "main": {
+      "productList": [
+        {
+          "id": "1",
+          "title": "探墓风云",
+          "description": "《探墓风云》是大型3DMMO地宫探险国战手游。游戏邀请“中国悬疑大师”蔡骏代言，共同构建宏大的地宫世界！玩家将从三国曹操墓开始，以探墓者的身份深入地宫古墓，展开一段惊心动魄悬念迭生的探险之旅。探墓摸金、地宫探险、寻龙转生、捉妖养宠、挑战粽子、天梯赛PK、征战万国……多样玩法打造一个令人震撼的悬疑世界。",
+          "imgUrl": "http://cdn.hoolaiimg.com/group1/M00/00/29/CgIJKlfogqeAMvtaAABLX6afjJw295.jpg",
+          "pageUrl": "http://tmfy.hulai.com/",
+          "downloadUrl": "http://www.hoolai.com/h5/22",
+          "logoUrl": "http://cdn.hoolaiimg.com/group1/M00/00/2A/CgIJK1fogxOAI-KSAAAgQHSqpQg810.jpg"
+        },
+        {
+          "id": "2",
+          "title": "焚天之怒【手游】",
+          "description": "独特的世界观，丰富有趣的玩法，强大的交互体验。由同名玄幻人气小说改编，小说作者亲自担任首席架构师的首款小说定制手游《焚天之怒》，带你领略真实的修仙世界，一怒红颜，焚神灭天，一同见证天帝重生！",
+          "imgUrl": "http://cdn.hoolaiimg.com/group1/M00/00/28/PBzLUVc6jXGASQAKAAFsCi6ve7M610.jpg?v=0.0.1",
+          "pageUrl": "http://ft.hoolaigames.com/",
+          "downloadUrl": "http://www.hoolai.com/h5/17",
+          "logoUrl": "http://cdn.hoolaiimg.com/group1/M00/00/28/PBzLUlc6hR2ADmFxAAAhlU5i7go379.jpg?v=0.0.1"          
+        }
+      ]
+    }
+  }
+}

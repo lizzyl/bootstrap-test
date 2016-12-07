@@ -1,0 +1,113 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "head": {
+      "description": "head part",
+      "type": "object",
+      "properties": {
+        "meta": {
+          "description": "meta info in head",
+          "type": "object",
+          "properties": {
+            "keywords": { "type": "string" },
+            "description": { "type": "string" },
+            "author": { "type": "string" }
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "favicon": { 
+          "type": "string" 
+        }
+      },
+      "required": ["title"]
+    },
+    "header": {
+      "type": "object",
+      "properties": {
+        "logo": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string" },
+            "src": { "type": "string" }
+          },
+          "required": ["url", "src"]
+        },
+        "nav": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" }
+            },
+            "required": ["name", "url"]
+          }
+        },
+        "account": {
+          "type": "object",
+          "properties": {
+            "signup": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            },
+            "signin": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            },
+            "logout": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "required": ["logo", "nav"]
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "copyright": { "type": "string" },
+        "address": { "type": "string" },
+        "icpLicense": { "type": "string" }
+      },
+      "required": ["copyright", "address"]
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "carousel": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": { "type": "string" },
+              "url": { "type": "string" },
+              "title": { "type": "string" },
+              "alt": { "type": "string" }
+            },
+            "required": ["src"]
+          }
+        },
+        "main": {
+          "type": "object"
+        }
+      },
+      "required": ["main"]
+    }
+  },
+  "required": ["head", "header", "footer", "content"]
+}
