@@ -3,6 +3,6 @@
 pages:
   stage: deploy
   script:
-  - ajv -s json-schema.json -d /data/*.json
+  - ajv -s json-schema.json -d data/*.json
   only:
   - master
