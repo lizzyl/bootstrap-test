@@ -1,11 +1,13 @@
+# ICPL
+
+[![build status](http://192.168.1.169:10080/gamesites/icplicense/badges/master/build.svg)](http://192.168.1.169:10080/gamesites/icplicense/commits/master)
+
+## 使用说明
+
 完整json文件为model.json，包含完整的字段。
 info.json 为程序使用的json文件，需要修改info.json文件时，可参考model.json.
 如果在model.json的基础上的修改，请先备份model.json,再修改。
 
-
-
-
-使用说明：
 
 该网站的动态数据保存在本地的info.json文件中。
 
