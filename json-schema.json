@@ -142,9 +142,6 @@
             "required": ["src"]
           }
         },
-        "bannerUrl": {
-          "type": "string"
-        },
         "main": {
           "type": "object"
         }
