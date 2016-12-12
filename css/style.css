@@ -176,7 +176,8 @@ div.l_line h3:before {
 .l_about.l_content .l_wenhua h2,
 .l_custody.l_content h1,
 .l_privacy.l_content h1,
-.l_server.l_content h1, 
+.l_server.l_content h1,
+.l_dispute.l_content h1, 
 .l_agreement.l_content h1 {
     text-align: center;
     padding: 15px 0px;
@@ -187,6 +188,7 @@ div.l_line h3:before {
 .l_custody.l_content p,
 .l_privacy.l_content p,
 .l_server.l_content p ,
+.l_dispute.l_content p ,
 .l_agreement.l_content p{
     text-indent: 30px;
     line-height: 30px;
@@ -259,6 +261,7 @@ div.l_line h3:before {
 
 .l_content {
     min-height: 370px;
+    color: #333;
 }
 
 .l_signin, .l_signup, .l_pay {

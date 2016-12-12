@@ -1,0 +1,84 @@
+{
+  "head": {
+    "meta": {
+      "keywords": "霍尔果斯炫动网络官网",
+      "description": "霍尔果斯炫动网络官网",
+      "author": "your-name@hoolai.com"
+    },
+    "title": "官网首页"
+  },
+  "header": {
+    "logo": {
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/2B/CgIJKlg-iz2ARC8SAAAjKGI-JWw474.png",
+      "url": "./"
+    },
+    "nav": [{
+      "name": "首页",
+      "url": "./index.html"
+    }, {
+      "name": "关于我们",
+      "url": "./about.html"
+    }, {
+      "name": "家长监护工程",
+      "url": "./custody.html"
+    }, {
+      "name": "在线交易",
+      "url": "./pay.html"
+    }, {
+      "name": "服务协议",
+      "url": "./server.html"
+    }, {
+      "name": "隐私协议",
+      "url": "./privacy.html"
+    }, {
+      "name": "纠纷处理",
+      "url": "./dispute.html"
+    }],
+    "account": {
+      "signup": {
+        "name": "注册",
+        "url": "./signup.html"
+      },
+      "signin": {
+        "name": "登陆",
+        "url": "./signin.html"
+      },
+      "logout": {
+        "name": "注销",
+        "url": "./logout.html"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "霍尔果斯炫动网络科技有限公司",
+    "address": "新疆伊犁州霍尔果斯市北京路以西、珠海路以南合作中心配套区查验业务楼8楼8-13-85号"
+  },
+  "content": {
+    "carousel": [{
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/29/CgIJKlfogeWAbJZmAALTKsqjajs799.jpg?v=0.0.1"
+    }, {
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/28/PBzLUVc6fvSAeUi8AAMYBqU2do0253.jpg?v=0.0.1"
+    }],
+    "main": {
+      "dispute": {
+        "title": "纠纷处理",
+        "description": [],
+        "content": [{
+          "title": "一、【协议的范围】",
+          "description": [{
+            "content": "1.1本协议是您与互爱之间关于用户使用互爱相关服务所订立的协议。“互爱”是指互爱互动（北京）科技有限公司及其相关服务可能存在的运营关联单位。“用户”是指使用互爱相关服务的使用人，在本协议中更多地称为“您”。"
+          }, {
+            "content": "1.2本协议项下的服务是指互爱向用户提供的包括但不限于即时通讯、网络媒体、互联网增值、互动娱乐、电子商务和广告等产品及服务（以下简称“本服务”）。"
+          }]
+        }, {
+          "title": "二、【帐号与密码安全】",
+          "description": [{
+            "content": "2.1您在使用互爱的服务时可能需要注册一个帐号。关于您使用帐号的具体规则，请遵守单独协议。"
+          }, {
+            "content": "2.2互爱特别提醒您应妥善保管您的帐号和密码。当您使用完毕后，应安全退出。因您保管不善可能导致遭受盗号或密码失窃，责任由您自行承担。"
+          }]
+        }]
+      }
+    }
+  }
+}

@@ -24,102 +24,174 @@ $(document).ready(function() {
         return deferred;
     }
 
-    //友情链接
-    function insertOwlItems() {
-        var url = 'http://api.hulai.com/h/api/index/getFriendlyList?rows=1000';
+    function getUrl() {
+        var data = {};
+        var theId = $('html').attr('id');
+        if (theId === 'index') {
+            data.url = './data/home.json';
+            data.html = $('html#index');
+        } else if (theId === 'about') {
+            data.url = './data/about.json';
+            data.html = $('html#about');
+        } else if (theId === 'agreement') {
+            data.url = './data/agreement.json';
+            data.html = $('html#agreement');
+        } else if (theId === 'custody') {
+            data.url = './data/custody.json';
+            data.html = $('html#custody');
+        } else if (theId === 'dispute') {
+            data.url = './data/dispute.json';
+            data.html = $('html#dispute');
+        } else if (theId === 'privacy') {
+            data.url = './data/privacy.json';
+            data.html = $('html#privacy');
+        } else if (theId === 'server') {
+            data.url = './data/server.json';
+            data.html = $('html#server');
+            // } else if (theId === 'dispute') {
+            //     data.url = './data/dispute.json';
+            //     data.html = $('html#dispute');
+            // } else {
+        } else {
+            data.url = './data/home.json';
+            data.html = $('html');
+        }
+        return data;
 
-        var promise = asyncFetch(url);
-        promise.then(function(data) {
-            if (data) {
-                var imgs = data.rows;
-
-                var item_str = '';
-                var i = 0;
-                var href = '';
-                var img_src = '';
-                var len = imgs.length;
-                while (i < len) {
-                    href = imgs[i].tourl;
-                    img_src = imgs[i].imgurl;
-
-                    item_str += '<div class="item"><a target="_blank" href="' + href + '"><img src="' + img_src + '"></a></div>';
-
-                    i++;
-                }
-                $('.l_friend_link').find('div.l_carousel').html(item_str);
-            }
-            $('.l_carousel').owlCarousel({
-                autoPlay: 3000,
-                pagination: false,
-                items: 6,
-                itemsDesktop: [1199, 6],
-                itemsDesktopSmall: [976, 5],
-                itemsTablet: [768, 4],
-                itemsMobile: [479, 3],
-                lazyLoad: true
-            })
-        });
     }
 
-    insertOwlItems();
-
     function getData() {
-        var url = './info.json';
+        // console.log($('html.index').find('#l_logo').attr('href'))
+        var url = getUrl().url;
+        var theHtml = getUrl().html;
+        // console.log('url:' + url )
         var promise = asyncFetch(url);
         promise.then(function(data) {
             if (data) {
-                if (data.metaData) {
-                    var metaData = data.metaData;
-                    $('meta[name="keywords"]').attr('content', metaData.keywords);
-                    $('meta[name="description"]').attr('content', metaData.description)
-                    $('#l_logo').attr('src', metaData.logoUrl);
-                }
-                if (data.banner) {
-                    var banner = data.banner;
-                    insertBanner(banner)
-                }
-                if (data.productList) {
 
-                    var productList = data.productList;
+                //head
+                var theHead = theHtml.find('head');
+                var metaData = data.head.meta;
+                if (metaData) {
+                    theHead.find($('meta[name="keywords"]')).attr('content', metaData.keywords);
+                    theHead.find($('meta[name="description"]')).attr('content', metaData.description)
+                    theHead.find($('meta[name="author"]')).attr('content', metaData.author)
+                }
+
+                theHead.find('title').html(data.title);
+
+                if (data.head.favicon) {
+                    theHead.find($('link[type="image/x-icon"]')).attr('href', data.head.favicon);
+                }
+
+
+                //header
+                var data_header = data.header;
+                $('#l_logo').children('img').attr('src', data_header.logo.src);
+                $('#l_logo').attr('href', data_header.logo.url)
+
+                //导航 nav
+                var data_nav = data_header.nav;
+                // $('ul.l_nav').html();
+                insertNav(data_nav);
+
+                if (data_header.account) {
+                    insertAccount(data_header.account);
+                }
+
+                //banner图 单张
+                if (data.content.bannerUrl) {
+                    var bannerUrl = data.content.bannerUrl;
+                    $('div.l_pay_banner>img').attr('src', bannerUrl)
+                }
+
+                //content 轮播 >=1
+                if (data.content.carousel) {
+                    var banner = data.content.carousel;
+                    insertBanner(banner);
+                }
+
+                //首页 详情页 产品
+                if (data.content.main.productList) {
+
+                    var productList = data.content.main.productList;
                     //首页
                     insertProducts(productList);
                     //详情页
                     detailPage(productList);
 
                 }
-                if (data.custody) {
-                    var custody = data.custody;
-                    $('div.l_custody').html(getStr(custody));
-                }
-                if (data.privacy) {
-                    var privacy = data.privacy;
-                    $('div.l_privacy').html(getStr(privacy));
-                }
-                if (data.server) {
-                    var server = data.server;
-                    $('div.l_server').html(getStr(server))
-                }
-                if (data.aboutUs) {
-                    var aboutUs = data.aboutUs;
-                    insertAboutUs(aboutUs);
-                }
-                if (data.footer) {
-                    var footer = $('div.l_footer');
-                    footer.find('p.l_tip').html(data.footer.tip);
-                    footer.find('p.l_addr').html(data.footer.addr);
-                    var copyright = data.footer.copyright + '<a class="c_white" href="custody.html"> | 未成年人家长监护</a>';
-                    footer.find('p.l_copyright').html(copyright);
-                }
-                if (data.agreement) {
-                    var agreement = data.agreement;
+                //agreement 用户协议
+                if (data.content.main.agreement) {
+                    var agreement = data.content.main.agreement;
                     $('div.l_agreement').html(getStr(agreement));
                 }
+                //custody 家长监护
+                if (data.content.main.custody) {
+                    var custody = data.content.main.custody;
+                    $('div.l_custody').html(getStr(custody));
+                }
+                //privacy 隐私协议
+                if (data.content.main.privacy) {
+                    var privacy = data.content.main.privacy;
+                    $('div.l_privacy').html(getStr(privacy));
+                }
+                //server 服务协议
+                if (data.content.main.server) {
+                    var server = data.content.main.server;
+                    $('div.l_server').html(getStr(server))
+                }
+                //dispute 纠纷处理
+                if (data.content.main.dispute) {
+                    var dispute = data.content.main.dispute;
+                    $('div.l_dispute').html(getStr(dispute))
+                }
+                //关于公司
+                if (data.content.main.aboutUs) {
+                    var aboutUs = data.content;
+                    insertAboutUs(aboutUs);
+                }
+
+                //footer
+                var data_footer = data.footer;
+                var footer = $('div.l_footer');
+                // footer.find('p.l_tip').html(data.footer.tip);
+                footer.find('p.l_addr').html(data_footer.address);
+                var copyright = data_footer.copyright + '<a class="c_white" href="custody.html"> | 未成年人家长监护</a>';
+                footer.find('p.l_copyright').html(copyright);
+
+                if (data_footer.icpLicense) {
+                    footer.find('p.l_icp').html(data_footer.icpLicense);
+                }
+
             }
         })
     }
-
+    //dom操作
     getData()
-        //首页产品
+
+    //导航处  登录注册 
+    function insertAccount(data) {
+        var account = $('ul.l_state');
+        account.find('li.l_dl').find('a').html(data.signin.name).attr('href', data.signin.url);
+        account.find('li.l_zc').find('a').html(data.signup.name).attr('href', data.signup.url);
+        account.find('li.l_zc').find('span.l_exit').text(data.logout.name);
+    }
+
+    //导航
+    function insertNav(data) {
+        var len = data.length;
+        // console.log('len:' + len)
+        var i = 0;
+        var str = '';
+        while (i < len) {
+            str += '<li><a href="' + data[i].url + '">' + data[i].name + '</a></li>'
+            i++;
+        }
+        $('ul.l_nav').html(str)
+
+    }
+    //首页产品
     function insertProducts(productList) {
         // console.log(productList.len)
         var product_str = '';
@@ -133,13 +205,19 @@ $(document).ready(function() {
         $('.l_new_game').find('div.l_games').html(product_str);
     }
 
+    //轮播图
     function insertBanner(data) {
         var len = data.length;
         var i = 0;
         var str = '';
         var dots = '';
         while (i < len) {
-            str += '<div class="item">' + '<a href="' + data[i].link + '">' + '<img src="' + data[i].imgUrl + '" alt="">' + '</a><div class="carousel-caption"></div></div>'
+            if (data.url) {
+                str += '<div class="item">' + '<a href="' + data[i].url + '">' + '<img src="' + data[i].src + '" alt="">' + '</a><div class="carousel-caption"></div></div>'
+            } else {
+                str += '<div class="item">' + '<img src="' + data[i].src + '" alt="">' + '<div class="carousel-caption"></div></div>'
+            }
+
             dots += ' ' + '<li data-target="#carousel-example-generic" data-slide-to="' + i + '"></li>';
             i++;
         }
@@ -149,10 +227,34 @@ $(document).ready(function() {
         $('div.l_index_banner').find('div.carousel-inner').find('div.item:first').addClass('active');
     }
 
-    function insertAboutUs(data) {
-        if (data.bannerUrl) {
-            var bannerUrl = data.bannerUrl;
-            $('div.l_about_banner>img, div.l_pay_banner>img').attr('src', bannerUrl)
+    //产品详情页
+    function detailPage(data) {
+        var id = window.location.search.substr(4);
+        console.log(id)
+        var len = data.length;
+        var i = 0;
+        if (id) {
+            var detail_dom = $('div.l_detail');
+            while (i < len) {
+                console.log(id === data[i].id)
+                if (id === data[i].id) {
+                    detail_dom.find('div.l_side').find('img').attr('src', data[i].logoUrl);
+                    detail_dom.find('div.l_side').find('h3').text(data[i].title);
+                    detail_dom.find('div.l_main_content').find('p').text(data[i].description);
+                    detail_dom.find('div.l_main_content').find('a.l_website').attr('href', data[i].pageUrl)
+                    detail_dom.find('div.l_main_content').find('a.l_download').attr('href', data[i].downloadUrl)
+                    break;
+                }
+                i++;
+            }
+        }
+    }
+    //关于公司
+    function insertAboutUs(_data) {
+        var data = _data.main.aboutUs;
+        if (_data.bannerUrl) {
+            var bannerUrl = _data.bannerUrl;
+            $('div.l_about_banner>img').attr('src', bannerUrl)
         }
 
         var companyInfo = data.companyInfo;
@@ -205,70 +307,98 @@ $(document).ready(function() {
         }
 
     }
-
+    //获取主要内容
     function getStr(data) {
-        var des_str = '';
+
         var i = 0;
         var j = 0;
-        var title = data.title;
-        var title_des = data.description;
-        var content = data.content;
-        var len = content.length;
-        var des_len = 0;
-        var custody_str = '<h1>' + title + '</h1>';
+        // var title = data.title;
 
-        var title_des_len = title_des.length;
-        for (var k = 0; k < title_des_len; k++) {
-            custody_str += '<p>' + title_des[k].content + '</p>'
+        var str = '';
+        if (data.title) {
+            str += '<h1>' + data.title + '</h1>';
         }
 
-        while (i < len) {
-            custody_str += '<div><h2>' + content[i].title + '</h2>'
-
-            var description = content[i].description;
-
-            des_len = content[i].description.length;
-            j = 0;
-            while (j < des_len) {
-                des_str += '<p>' + description[j].content;
-                if (description[j].attachment !== undefined) {
-                    des_str += '<a class="btn btn-default" href="' + description[j].attachment.url + '">' + description[j].attachment.content + '</a>' + '</p>'
-                } else {
-                    des_str += '</p>'
-                }
-                j++;
+        if (data.description) {
+            var title_des = data.description;
+            var title_des_len = title_des.length;
+            for (var k = 0; k < title_des_len; k++) {
+                str += '<p>' + title_des[k].content + '</p>'
             }
-
-            custody_str += des_str
-            des_str = '';
-            i++;
         }
-        return custody_str;
-        // $('div.l_custody').html(custody_str)
-    }
 
-    function detailPage(data) {
-        var id = window.location.search.substr(4);
-        console.log(id)
-        var len = data.length;
-        var i = 0;
-        if (id) {
-            var detail_dom = $('div.l_detail');
+        if (data.content) {
+            var content = data.content;
+            var len = content.length;
+            var des_len = 0;
             while (i < len) {
-                console.log(id === data[i].id)
-                if (id === data[i].id) {
-                    detail_dom.find('div.l_side').find('img').attr('src', data[i].logoUrl);
-                    detail_dom.find('div.l_side').find('h3').text(data[i].title);
-                    detail_dom.find('div.l_main_content').find('p').text(data[i].description);
-                    detail_dom.find('div.l_main_content').find('a.l_website').attr('href', data[i].pageUrl)
-                    detail_dom.find('div.l_main_content').find('a.l_download').attr('href', data[i].downloadUrl)
-                    break;
+                str += '<div><h2>' + content[i].title + '</h2>'
+
+                var description = content[i].description;
+
+                des_len = content[i].description.length;
+                j = 0;
+
+                var des_str = '';
+                while (j < des_len) {
+
+                    des_str += '<p>' + description[j].content;
+                    if (description[j].attachment !== undefined) {
+                        des_str += '<a class="btn btn-default" href="' + description[j].attachment.url + '">' + description[j].attachment.content + '</a>' + '</p>'
+                    } else {
+                        des_str += '</p>'
+                    }
+                    j++;
                 }
+
+                str += des_str
+                des_str = '';
                 i++;
             }
         }
+
+        return str;
+        // $('div.l_custody').html(custody_str)
     }
 
+    //友情链接
+    function insertOwlItems() {
+        var url = 'http://api.hulai.com/h/api/index/getFriendlyList?rows=1000';
+
+        var promise = asyncFetch(url);
+        promise.then(function(data) {
+            if (data) {
+                var imgs = data.rows;
+
+                var item_str = '';
+                var i = 0;
+                var href = '';
+                var img_src = '';
+                var len = imgs.length;
+                while (i < len) {
+                    href = imgs[i].tourl;
+                    img_src = imgs[i].imgurl;
+
+                    item_str += '<div class="item"><a target="_blank" href="' + href + '"><img src="' + img_src + '"></a></div>';
+
+                    i++;
+                }
+                $('.l_friend_link').find('div.l_carousel').html(item_str);
+            }
+            $('.l_carousel').owlCarousel({
+                autoPlay: 3000,
+                pagination: false,
+                items: 6,
+                itemsDesktop: [1199, 6],
+                itemsDesktopSmall: [976, 5],
+                itemsTablet: [768, 4],
+                itemsMobile: [479, 3],
+                lazyLoad: true
+            })
+        });
+    }
+
+    insertOwlItems();
 
     //cookie
     function sign() {

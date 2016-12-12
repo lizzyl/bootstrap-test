@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "head": {
@@ -10,16 +10,22 @@
           "description": "meta info in head",
           "type": "object",
           "properties": {
-            "keywords": { "type": "string" },
-            "description": { "type": "string" },
-            "author": { "type": "string" }
+            "keywords": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            }
           }
         },
         "title": {
           "type": "string"
         },
-        "favicon": { 
-          "type": "string" 
+        "favicon": {
+          "type": "string"
         }
       },
       "required": ["title"]
@@ -30,8 +36,12 @@
         "logo": {
           "type": "object",
           "properties": {
-            "url": { "type": "string" },
-            "src": { "type": "string" }
+            "url": {
+              "type": "string"
+            },
+            "src": {
+              "type": "string"
+            }
           },
           "required": ["url", "src"]
         },
@@ -41,8 +51,12 @@
           "items": {
             "type": "object",
             "properties": {
-              "name": { "type": "string" },
-              "url": { "type": "string" }
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
             },
             "required": ["name", "url"]
           }
@@ -53,22 +67,34 @@
             "signup": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "url": { "type": "string" }
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
               }
             },
             "signin": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "url": { "type": "string" }
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
               }
             },
             "logout": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "url": { "type": "string" }
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -79,9 +105,15 @@
     "footer": {
       "type": "object",
       "properties": {
-        "copyright": { "type": "string" },
-        "address": { "type": "string" },
-        "icpLicense": { "type": "string" }
+        "copyright": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "icpLicense": {
+          "type": "string"
+        }
       },
       "required": ["copyright", "address"]
     },
@@ -94,13 +126,24 @@
           "items": {
             "type": "object",
             "properties": {
-              "src": { "type": "string" },
-              "url": { "type": "string" },
-              "title": { "type": "string" },
-              "alt": { "type": "string" }
+              "src": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
             },
             "required": ["src"]
           }
+        },
+        "bannerUrl": {
+          "type": "string"
         },
         "main": {
           "type": "object"
