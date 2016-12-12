@@ -27,35 +27,34 @@ $(document).ready(function() {
     function getUrl() {
         var data = {};
         var theId = $('html').attr('id');
-        if (theId === 'index') {
-            data.url = './data/home.json';
-            data.html = $('html#index');
-        } else if (theId === 'about') {
-            data.url = './data/about.json';
-            data.html = $('html#about');
-        } else if (theId === 'agreement') {
-            data.url = './data/agreement.json';
-            data.html = $('html#agreement');
-        } else if (theId === 'custody') {
-            data.url = './data/custody.json';
-            data.html = $('html#custody');
-        } else if (theId === 'dispute') {
-            data.url = './data/dispute.json';
-            data.html = $('html#dispute');
-        } else if (theId === 'privacy') {
-            data.url = './data/privacy.json';
-            data.html = $('html#privacy');
-        } else if (theId === 'server') {
-            data.url = './data/server.json';
-            data.html = $('html#server');
-            // } else if (theId === 'dispute') {
-            //     data.url = './data/dispute.json';
-            //     data.html = $('html#dispute');
-            // } else {
-        } else {
-            data.url = './data/home.json';
-            data.html = $('html');
-        }
+        // if (theId === 'index') {
+        //     data.url = './data/home.json';
+        //     data.html = $('html#index');
+        // } else if (theId === 'about') {
+        //     data.url = './data/about.json';
+        //     data.html = $('html#about');
+        // } else if (theId === 'agreement') {
+        //     data.url = './data/agreement.json';
+        //     data.html = $('html#agreement');
+        // } else if (theId === 'custody') {
+        //     data.url = './data/custody.json';
+        //     data.html = $('html#custody');
+        // } else if (theId === 'dispute') {
+        //     data.url = './data/dispute.json';
+        //     data.html = $('html#dispute');
+        // } else if (theId === 'privacy') {
+        //     data.url = './data/privacy.json';
+        //     data.html = $('html#privacy');
+        // } else if (theId === 'server') {
+        //     data.url = './data/server.json';
+        //     data.html = $('html#server');
+        // } else if (theId === 'dispute') {
+        //     data.url = './data/dispute.json';
+        //     data.html = $('html#dispute');
+        // } else {
+        data.url = './data/home.json';
+        data.html = $('html');
+        // }
         return data;
 
     }
