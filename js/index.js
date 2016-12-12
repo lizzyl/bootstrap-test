@@ -27,34 +27,37 @@ $(document).ready(function() {
     function getUrl() {
         var data = {};
         var theId = $('html').attr('id');
-        // if (theId === 'index') {
-        //     data.url = './data/home.json';
-        //     data.html = $('html#index');
-        // } else if (theId === 'about') {
-        //     data.url = './data/about.json';
-        //     data.html = $('html#about');
-        // } else if (theId === 'agreement') {
-        //     data.url = './data/agreement.json';
-        //     data.html = $('html#agreement');
-        // } else if (theId === 'custody') {
-        //     data.url = './data/custody.json';
-        //     data.html = $('html#custody');
-        // } else if (theId === 'dispute') {
-        //     data.url = './data/dispute.json';
-        //     data.html = $('html#dispute');
-        // } else if (theId === 'privacy') {
-        //     data.url = './data/privacy.json';
-        //     data.html = $('html#privacy');
-        // } else if (theId === 'server') {
-        //     data.url = './data/server.json';
-        //     data.html = $('html#server');
-        // } else if (theId === 'dispute') {
-        //     data.url = './data/dispute.json';
-        //     data.html = $('html#dispute');
-        // } else {
-        data.url = './data/home.json';
-        data.html = $('html');
-        // }
+        if (theId === 'index') {
+            data.url = './data/home.json';
+            data.html = $('html#index');
+        } else if (theId === 'about') {
+            data.url = './data/about.json';
+            data.html = $('html#about');
+        } else if (theId === 'agreement') {
+            data.url = './data/agreement.json';
+            data.html = $('html#agreement');
+        } else if (theId === 'custody') {
+            data.url = './data/custody.json';
+            data.html = $('html#custody');
+        } else if (theId === 'dispute') {
+            data.url = './data/dispute.json';
+            data.html = $('html#dispute');
+        } else if (theId === 'privacy') {
+            data.url = './data/privacy.json';
+            data.html = $('html#privacy');
+        } else if (theId === 'server') {
+            data.url = './data/server.json';
+            data.html = $('html#server');
+        } else if (theId === 'dispute') {
+            data.url = './data/dispute.json';
+            data.html = $('html#dispute');
+        } else if (theId === 'pay') {
+            data.url = './data/pay.json';
+            data.html = $('html#pay');
+        } else {
+            data.url = './data/home.json';
+            data.html = $('html');
+        }
         return data;
 
     }
@@ -104,10 +107,10 @@ $(document).ready(function() {
                     $('div.l_pay_banner>img').attr('src', bannerUrl)
                 }
 
-                //content 轮播 >=1
+                //content >1轮播  =1一张图
                 if (data.content.carousel) {
                     var banner = data.content.carousel;
-                    insertBanner(banner);
+                    insertBanner(banner, theHtml);
                 }
 
                 //首页 详情页 产品
@@ -205,25 +208,35 @@ $(document).ready(function() {
     }
 
     //轮播图
-    function insertBanner(data) {
+    function insertBanner(data, theHtml) {
         var len = data.length;
         var i = 0;
         var str = '';
         var dots = '';
-        while (i < len) {
-            if (data.url) {
-                str += '<div class="item">' + '<a href="' + data[i].url + '">' + '<img src="' + data[i].src + '" alt="">' + '</a><div class="carousel-caption"></div></div>'
+        if (len == 1) {
+            if (data[0].url) {
+                str += '<a href="' + data[0].url + '"><img src="' + data[0].src + '" /></a>';
             } else {
-                str += '<div class="item">' + '<img src="' + data[i].src + '" alt="">' + '<div class="carousel-caption"></div></div>'
+                str += '<img src="' + data[0].src + '" />';
             }
 
-            dots += ' ' + '<li data-target="#carousel-example-generic" data-slide-to="' + i + '"></li>';
-            i++;
+            theHtml.find('.l_banner').html(str)
+        } else {
+            while (i < len) {
+                if (data.url) {
+                    str += '<div class="item">' + '<a href="' + data[i].url + '">' + '<img src="' + data[i].src + '" alt="">' + '</a><div class="carousel-caption"></div></div>'
+                } else {
+                    str += '<div class="item">' + '<img src="' + data[i].src + '" alt="">' + '<div class="carousel-caption"></div></div>'
+                }
+
+                dots += ' ' + '<li data-target="#carousel-example-generic" data-slide-to="' + i + '"></li>';
+                i++;
+            }
+            theHtml.find($('div.l_banner')).find('ol.carousel-indicators').html(dots);
+            theHtml.find($('div.l_banner')).find('ol.carousel-indicators').find('li:first').addClass('active');
+            theHtml.find($('div.l_banner')).find('div.carousel-inner').html(str);
+            theHtml.find($('div.l_banner')).find('div.carousel-inner').find('div.item:first').addClass('active');
         }
-        $('div.l_index_banner').find('ol.carousel-indicators').html(dots);
-        $('div.l_index_banner').find('ol.carousel-indicators').find('li:first').addClass('active');
-        $('div.l_index_banner').find('div.carousel-inner').html(str);
-        $('div.l_index_banner').find('div.carousel-inner').find('div.item:first').addClass('active');
     }
 
     //产品详情页

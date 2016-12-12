@@ -1,0 +1,62 @@
+{
+  "head": {
+    "meta": {
+      "keywords": "霍尔果斯炫动网络官网",
+      "description": "霍尔果斯炫动网络官网",
+      "author": "your-name@hoolai.com"
+    },
+    "title": "关于公司"
+  },
+  "header": {
+    "logo": {
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/2B/CgIJKlg-iz2ARC8SAAAjKGI-JWw474.png",
+      "url": "/"
+    },
+    "nav": [{
+      "name": "首页",
+      "url": "./index.html"
+    }, {
+      "name": "关于我们",
+      "url": "./about.html"
+    }, {
+      "name": "家长监护工程",
+      "url": "./custody.html"
+    }, {
+      "name": "在线交易",
+      "url": "./pay.html"
+    }, {
+      "name": "服务协议",
+      "url": "./server.html"
+    }, {
+      "name": "隐私协议",
+      "url": "./privacy.html"
+    }, {
+      "name": "纠纷处理",
+      "url": "./dispute.html"
+    }],
+    "account": {
+      "signup": {
+        "name": "注册",
+        "url": "/signup.html"
+      },
+      "signin": {
+        "name": "登陆",
+        "url": "/signin.html"
+      },
+      "logout": {
+        "name": "注销",
+        "url": "/logout.html"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "霍尔果斯炫动网络科技有限公司",
+    "address": "新疆伊犁州霍尔果斯市北京路以西、珠海路以南合作中心配套区查验业务楼8楼8-13-85号"
+  },
+  "content": {
+    "carousel": [{
+      "src": "http://www.hoolai.com/assets/images/about_hoolai.jpg"
+    }],
+    "main": {}
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "head": {
+    "meta": {
+      "keywords": "霍尔果斯炫动网络官网",
+      "description": "霍尔果斯炫动网络官网",
+      "author": "your-name@hoolai.com"
+    },
+    "title": "关于公司"
+  },
+  "header": {
+    "logo": {
+      "src": "http://cdn.hoolaiimg.com/group1/M00/00/2B/CgIJKlg-iz2ARC8SAAAjKGI-JWw474.png",
+      "url": "/"
+    },
+    "nav": [{
+      "name": "首页",
+      "url": "./index.html"
+    }, {
+      "name": "关于我们",
+      "url": "./about.html"
+    }, {
+      "name": "家长监护工程",
+      "url": "./custody.html"
+    }, {
+      "name": "在线交易",
+      "url": "./pay.html"
+    }, {
+      "name": "服务协议",
+      "url": "./server.html"
+    }, {
+      "name": "隐私协议",
+      "url": "./privacy.html"
+    }, {
+      "name": "纠纷处理",
+      "url": "./dispute.html"
+    }],
+    "account": {
+      "signup": {
+        "name": "注册",
+        "url": "/signup.html"
+      },
+      "signin": {
+        "name": "登陆",
+        "url": "/signin.html"
+      },
+      "logout": {
+        "name": "注销",
+        "url": "/logout.html"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "霍尔果斯炫动网络科技有限公司",
+    "address": "新疆伊犁州霍尔果斯市北京路以西、珠海路以南合作中心配套区查验业务楼8楼8-13-85号"
+  },
+  "content": {
+    "carousel": [{
+      "src": "http://www.hoolai.com/assets/images/about_hoolai.jpg"
+    }],
+    "main": {
+      "aboutUs": {
+        "companyInfo": {
+          "title": "公司简介",
+          "description": [{
+            "content": "霍尔果斯炫动网络科技有限公司是一家网络游戏研发、运营公司，于2016年成立。公司以专业一流的研发能力和对玩家负责的态度，用心制作着每一款游戏，也体验着游戏带来的快乐与幸福。公司管理层具有丰富的管理和运营经验。公司成立至今，先后研发并运营大型多人在线游戏，主要包括：《焚天之怒》、《探墓风云》等，这些产品取得了骄人业绩的同时，也受到业界及玩家的极大好评。公司提供丰厚的薪酬和最完善的福利制度，提倡打破层级部门的学习氛围，建立开放、平等、务实的企业文化，全力帮助每一个不甘平庸的员工，实现自己的职业理想。渴望所有热爱游戏，坚持理想的年轻人，加入我们，一起用最澎湃的热情，最自由的创造，最执着的勤奋，打造出更多受欢迎的优质游戏作品。"
+          }, {
+            "content": "公司地址：新疆伊犁州霍尔果斯市北京路以西、珠海路以南合作中心配套区查验业务楼8楼8-13-85号"
+          }]
+        },
+        "companyCulture": {}
+      }
+    }
+  }
+}
